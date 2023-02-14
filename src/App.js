@@ -1,20 +1,27 @@
-import './App.css';
+// import './App.css';
+import { useState } from 'react';
 import Base from './Base/Base';
+import AuthPage from './Components/AuthPage';
+import DashBoard from './components/DashBoard';
 import { StudentDetails } from './Components/students';
 
 function App() {
   return (
     <div className="App">
-      <Base
-      title = "Batch Details"
-      description = "All students details"
-      >
-     <StudentDetails/>
 
-      </Base>
+   <Switch>
 
-    </div>
+    <Route exact path = "/">
+           <h1>Welcome to our App</h1>
+    </Route>
+
+
+   </Switch>
+
+      </div>
   );
 }
+
+  
 
 export default App;

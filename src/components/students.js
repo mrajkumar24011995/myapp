@@ -10,6 +10,7 @@ export function StudentDetails () {
     const [gender,setGender] = useState("")
     const [experience,setExperience] = useState("")
 
+    //create a new data
     const addNewStudent = () => {
         const newStudent = {
             id,
@@ -19,7 +20,19 @@ export function StudentDetails () {
             experiness: 2
         }
         setStudents([...studentsData, newStudent])
+        setId("")
+        setName("")
+        setBatch("")
+        setGender("")
+        setExperience("")
     };
+
+    //delete a new data
+    const deleteStudentData = (studId) =>{
+        const selectedStudents = studentsData.filter((stud)=> stud.id !== stud)
+        setStudents(selectedStudents);
+
+    }
     return(
         <div className="containers">
             <div className="input-section">
@@ -72,8 +85,8 @@ export function StudentDetails () {
     </Typography> 
 </CardContent>
 <CardActions>
-    <Button variant="contained" color="success">Edit</Button>
-    <Button variant="contained" color="error">Delete</Button>
+   <Button color="secondary">Edit</Button>
+   <Button onClick={()=>deleteStudentData(stud.id)} color="error">Delete</Button>
 </CardActions>
 </Card>
 
